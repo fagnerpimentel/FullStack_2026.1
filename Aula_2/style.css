@@ -1,0 +1,25 @@
+p{
+    color: blue;
+    font-size: 18pt;
+}
+
+#p1{
+    background-color: green;
+}
+
+#p2{
+    background-color: yellow;
+}
+
+.preto_branco{
+    color: white;
+    background-color: black;
+}
+
+a{
+    color: chocolate;
+}
+
+a:hover{
+    background-color: blueviolet;
+}
