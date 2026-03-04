@@ -1,0 +1,54 @@
+#do{border-style: dotted;}
+#da{border-style: dashed;}
+#so{border-style: solid;}
+#db{border-style: double;}
+#gr{border-style: groove;}
+#ri{border-style: ridge;}
+
+#ex{
+    font-size: 15px;
+    padding: 20px;
+    margin: 20px;
+    width: 100px;
+    height: 20px;
+    border: solid 4px blue;
+    border-radius: 20px;
+    color: red;
+    box-shadow: 30px 10px cyan;
+}
+
+p{display: block;}
+a{display: block;}
+
+#d1{
+    background-color: aqua;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 100px;
+    left: 50px;
+}
+
+#d2{
+    background-color: darkgreen;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    z-index: 1;
+}
+
+#d3{
+    background-color: tomato;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    z-index: 2;
+}
+
+p:hover{
+    background-color: chartreuse;
+}
