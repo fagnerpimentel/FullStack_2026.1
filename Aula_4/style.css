@@ -1,0 +1,34 @@
+.flex-container{
+    background-color: burlywood;
+    height: 400px;
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.flex-container div{
+    background-color: cadetblue;
+    margin: 10px;
+    padding: 10px;
+}
+
+#d10{
+    order: 2;
+    flex-grow: 2;
+}
+
+#d20{
+    order: 1;
+    flex-grow: 1;
+}
+
+#d30{
+    flex-basis: 200px;
+}
+
+#d18{
+    align-self: center;
+}
