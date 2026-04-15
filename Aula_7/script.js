@@ -13,22 +13,6 @@ console.log(idades[1])
 console.log(idades.length)
 
 
-let retangulo_1 = {
-    x: 10,
-    y: 10,
-    w: 50,
-    h: 50,
-    color: "red"
-};
-
-let retangulo_2 = {
-    x: 100,
-    y: 100,
-    w: 50,
-    h: 50,
-    color: "blue"
-};
-
 // ---------------------------------------------------------
 
 
