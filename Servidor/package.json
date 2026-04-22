@@ -1,0 +1,16 @@
+{
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "O meu primeiro projeto de servidor",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Fagner Pimentel",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^5.2.1"
+  }
+}
