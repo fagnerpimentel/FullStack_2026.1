@@ -5,7 +5,8 @@ var bodyParser = require("body-parser")
 var mongodb = require("mongodb");
 
 const MongoClinet = mongodb.MongoClient;
-const uri = "mongodb+srv://professor:ncjKblNhpDjr3l1k@aulabd.cjihvk4.mongodb.net/?appName=AulaBD"
+// const uri = "mongodb+srv://professor:ncjKblNhpDjr3l1k@aulabd.cjihvk4.mongodb.net/?appName=AulaBD"
+const uri = "mongodb://localhost:27017"
 const client = new MongoClinet(uri, { useNewUrlParser: true })
 
 var dbo = client.db("Exemplo_bd");
@@ -92,6 +93,41 @@ app.post("/cadastrar_usuario", function(req,res){
         res.render('resposta_usuario.ejs', {resposta: "Erro ao logar usuário!"})
       }else {
         res.render('resposta_usuario.ejs', {resposta: "Usuário logado com sucesso!"})        
+      };
+    });
+
+  });
+
+
+  app.post("/atualizar_usuario", function(req, resp) {
+    var data = { db_login: req.body.login, db_senha: req.body.senha };
+    var newData = { $set: {db_senha: req.body.novasenha} };
+
+    usuarios.updateOne(data, newData, function (err, result) {
+      console.log(result);
+      if (result.modifiedCount == 0) {
+        resp.render('resposta_usuario.ejs', {resposta: "Usuário/senha não encontrado!"})
+      }else if (err) {
+        resp.render('resposta_usuario.ejs', {resposta: "Erro ao atualizar usuário!"})
+      }else {
+        resp.render('resposta_usuario.ejs', {resposta: "Usuário atualizado com sucesso!"})        
+      };
+    });
+   
+  });
+
+     
+  app.post("/remover_usuario", function(req, resp) {
+    var data = { db_login: req.body.login, db_senha: req.body.senha };
+   
+    usuarios.deleteOne(data, function (err, result) {
+      console.log(result);
+      if (result.deletedCount == 0) {
+        resp.render('resposta_usuario.ejs', {resposta: "Usuário/senha não encontrado!"})
+      }else if (err) {
+        resp.render('resposta_usuario.ejs', {resposta: "Erro ao remover usuário!"})
+      }else {
+        resp.render('resposta_usuario.ejs', {resposta: "Usuário removido com sucesso!"})        
       };
     });
 
